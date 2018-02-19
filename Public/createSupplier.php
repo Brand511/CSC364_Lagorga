@@ -3,7 +3,7 @@
 /* 	Start-up activities prior to loading the page content.  This will make a connection
      *	to the database and start a session.
      */
-require_once($_SERVER['DOCUMENT_ROOT'] . '/includes/application_includes.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/../includes/application_includes.php');
 
 // Include the template files needed for the page
 require_once(FS_TEMPLATES . 'mainHeaderTemplate.php');
@@ -34,6 +34,7 @@ if ($requestType == 'GET') {
     $db->query($sql);
 
     // If successful, where to we redirect them to?
+    header('Location: http://csc364dev.com/index.php');
 
 }
 

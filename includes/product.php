@@ -24,7 +24,7 @@ class Product
      * @var array
      */
     private $whiteList = ['id' => 'int',
-        'Name' => 'varchar',
+        'name' => 'varchar',
         'description' => 'varchar',
         'price' => 'float',
         'picture' => 'varchar',
@@ -57,7 +57,7 @@ class Product
      * @param $id
      * @return mixed
      */
-    public function getUser($id)
+    public function getProduct($id)
     {
 
         $sql = 'select * from products where id = ' . $id . ';';
@@ -71,11 +71,11 @@ class Product
     /**
      * Return all users.  If th active parameter is supplied,
      * return only the active or inactive users as appropriate
-     *
      * @param null $active
      * @return mixed
      */
-    public function getUsers($active = null)
+
+    public function getProducts($active = null)
     {
 
         $sql = 'select * from products';
@@ -133,7 +133,7 @@ class Product
     public function delete($id)
     {
 
-        $sql = 'update products0 set isActive=0 where id = ' . $id . ';';
+        $sql = 'update products set isActive=0 where id = ' . $id . ';';
 
         $result = $this->db->query($sql);
 

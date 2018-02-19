@@ -11,8 +11,7 @@ require_once(FS_TEMPLATES . 'mainHeaderTemplate.php');
 require_once(FS_TEMPLATES . 'createProductTemplate.php');
 require_once(FS_TEMPLATES . 'mainFooterTemplate.php');
 
-// Include the User class
-require_once(FS_INCLUDES . 'product.php');
+require_once (FS_INCLUDES . 'product.php');
 
 
 // Load page header
@@ -22,19 +21,16 @@ echo $header->renderStatic();
 
 if ($requestType == 'GET') {
 
-    // Show the Create User Form
-    $form = new createUserTemplate();
+    // Show the Create Products Form
+    $form = new createProductTemplate();
     echo $form->render();
 
 } else {
 
-    $formData = $_POST;
-    $formData['created_at'] = date('Y-m-d H:i:s', time());
-
-    $u = new product($db);
+    $u = new Product($db);
     $r = $u->create($formData);
-
-    header('Location: http://csc206dev.com/index.php');
+    // When done, redirect to a web page
+    header('Location: http://csc364dev.com/index.php');
 
 }
 

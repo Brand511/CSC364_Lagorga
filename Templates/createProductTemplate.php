@@ -1,24 +1,10 @@
 <?php
 
-class createUserTemplate extends templateEngine {
+require_once (FS_TEMPLATES . 'templateEngine.php');
 
-    /**
-     * These are the data fields expected for this template. This
-     * is a white list of fields.
-     *
-     * @var array
-     */
-    protected $whiteList = ['id',
-        'name', 'description', 'price',
-        'picture', 'sku', 'qty_available', 'date_added', 'supplier_ID',
-        'supplier_SKU', 'cost'];
+class createProductTemplate extends templateEngine {
 
-    /**
-     * The constructor will be used to save the HTML template to the $template class property.
-     * The easiest way to do this is using HEREDOC format.
-     *
-     * sampleTemplate constructor.
-     */
+
     public function __construct(){
 
         $temp = <<<HTML
@@ -79,16 +65,9 @@ class createUserTemplate extends templateEngine {
                             </div>                           
                         </div>
                         
-                        <!-- File Button --> 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="picture">Image Upload</label>
-                            <div class="col-md-8">
-                                <input id="picture" name="picture" class="input-file" type="file">
-                            </div>
-                        </div>
                         <div class="form-group row">
                             <div class="offset-3 col-md-9">
-                                <button name="submit" type="submit" class="btn btn-primary">Create Product</button>
+                                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </div>
                     </form>

@@ -61,6 +61,9 @@ class mainHeaderTemplate extends templateEngine
                 <li class="="nav-item">
                 <a class="nav-link" href="createProduct.php">Post Products</a>
                 </li>
+                <li class="="nav-item">
+                <a class="nav-link" href="createSupplier.php">Create Supplier</a>
+                </li>
             </ul>
         </div>
     </div>
