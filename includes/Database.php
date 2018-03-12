@@ -1,8 +1,6 @@
 <?php
-
 class Database
 {
-
     /**
      * Stores error messages for connection errors
      */
@@ -27,7 +25,6 @@ class Database
      * MySQL Resource link identifier stored here
      */
     private $db;
-
     /**
      * Database constructor.
      *
@@ -40,7 +37,6 @@ class Database
         $this->dbName = DB_DATABASE;
         $this->connectToDb();
     }
-
     /**
      * Attempt to connect to the database and save
      * connection resource if successful
@@ -48,13 +44,11 @@ class Database
     private function connectToDb()
     {
         $this->db = new mysqli($this->host, $this->dbUser, $this->dbPass, $this->dbName);
-        if ( $this->db->connect_errno ) {
+        if ($this->db->connect_errno) {
             trigger_error('Could not connect to server');
             $this->connectError = $this->db->connect_error;
         }
-
     }
-
     /**
      * Checks for MySQL errors
      *
@@ -64,15 +58,11 @@ class Database
     {
         $db = $this->db;
         // Check for connection error
-        if ( $db->connect_errno ) return true;
-
+        if ($db->connect_errno) return true;
         // Check for an error from MySQL
         $error = $db->errno;
-
         return (!empty($error));
-
     }
-
     /**
      * Returns an instance of MySQLResult to fetch rows with
      *
@@ -81,14 +71,30 @@ class Database
      */
     public function query($sql)
     {
-        if ( !$queryResource = $this->db->query($sql) ) {
+        if (!$queryResource = $this->db->query($sql)) {
             trigger_error('Query failed: ' . $this->db->errno . ' SQL: ' . $sql);
         }
-
         return new MySQLResult($this, $queryResource);
     }
+    /**
+     * Return the ID of the last inserted record
+     *
+     * @return mixed
+     */
+    public function insertID(){
+        return $this->db->insert_id;
+    }
+    /**
+     * Escape a string so it is handled properly in sql statements
+     *
+     * @param $string
+     * @return mixed
+     */
+    public function escape_string($string)
+    {
+        return $this->db->real_escape_String($string);
+    }
 }
-
 /**
  * MySQLResult Data Fetching Class
  *
@@ -97,21 +103,18 @@ class Database
  */
 class MySQLResult
 {
-
     /**
      * Instance of MySQL providing the database connection
      *
      * @var
      */
     private $db;
-
     /**
      * Query resource
      *
      * @var
      */
     private $result;
-
     /**
      * MySQLResult constructor.
      *
@@ -125,35 +128,27 @@ class MySQLResult
         $this->db = $db;
         $this->result = $result;
     }
-
     public function fetch()
     {
-
-        if ( $row = $this->result->fetch_assoc() ) {
+        if ($row = $this->result->fetch_assoc()) {
             // echo "Row is......"; print_r($row); echo "<br />";
             return $row;
-        } else if ( $this->size() > 0 ) {
+        } else if ($this->size() > 0) {
             $this->result->data_seek(0);
-
             return false;
         } else {
             return false;
         }
     }
-
     /**
      * Return the all rows as associative arrays
      * @return bool
      */
     public function fetchAll()
     {
-
-        if (! $rows = $this->result->fetch_all(MYSQLI_ASSOC)) return false;
-
+        if (!$rows = $this->result->fetch_all(MYSQLI_ASSOC)) return false;
         return $rows;
     }
-
-
     /**
      * Returns the number of rows in the result set
      *
@@ -163,7 +158,6 @@ class MySQLResult
     {
         return $this->result->num_rows;
     }
-
     /**
      * Return the ID of the last inserted row
      *
@@ -171,9 +165,8 @@ class MySQLResult
      */
     public function insertID()
     {
-        return $this->db->insert_id();
+        return $this->db->insertID();
     }
-
     /**
      * Checks for MySQL Errors
      *

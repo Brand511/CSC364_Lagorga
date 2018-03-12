@@ -22,7 +22,7 @@ echo $header->renderStatic();
 if ($requestType == 'GET') {
 
     // Show the Create Products Form
-    $form = new createProductTemplate();
+    $form = new postProductTemplate();
     echo $form->render();
 
 } else {
@@ -32,7 +32,7 @@ if ($requestType == 'GET') {
     //$formData['created_at'] = date('Y-m-d H:i:s', time());
     // Create User object and save data to the database
     $u = new Product($db);
-    $r = $u->create($formData);
+    $r = $u->getProducts($formData);
 
     // When done, redirect to a web page
     header('Location: http://csc364dev.com/index.php');
@@ -44,5 +44,3 @@ if ($requestType == 'GET') {
 // Load page header
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();
-
-

@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * Class to handle interaction with the users table in the database.
@@ -7,7 +7,7 @@
  */
 
 
-class Product
+class Customer
 {
 
     /**
@@ -23,17 +23,21 @@ class Product
      *
      * @var array
      */
-    private $whiteList = ['id' => 'int',
-        'name' => 'varchar',
-        'description' => 'varchar',
-        'price' => 'float',
-        'picture' => 'varchar',
-        'sku' => 'varchar',
-        'qty_available' => 'int',
-        'date_added' => 'date',
-        'supplier_ID' => 'int',
-        'supplier_SKU' => 'varchar',
-        'cost' => 'float',
+    private $whiteList = ['role_id' => 'int',
+        'firstName' => 'varchar',
+        'middleName' => 'varchar',
+        'lastName' => 'varchar',
+        'address1' => 'varchar',
+        'address2' => 'varchar',
+        'city' => 'varchar',
+        'state' => 'varchar',
+        'zip' => 'varchar',
+        'password' => 'varchar',
+        'phone' => 'varchar',
+        'email' => 'varchar',
+        'isActive' => 'int',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 
 
@@ -55,10 +59,10 @@ class Product
      * @param $id
      * @return mixed
      */
-    public function getProduct($id)
+    public function getUser($id)
     {
 
-        $sql = 'select * from products where id = ' . $id . ';';
+        $sql = 'select * from customers where id = ' . $id . ';';
 
         $result = $this->db->query($sql);
 
@@ -69,14 +73,14 @@ class Product
     /**
      * Return all users.  If th active parameter is supplied,
      * return only the active or inactive users as appropriate
+     *
      * @param null $active
      * @return mixed
      */
-
-    public function getProducts($active = null)
+    public function getUsers($active = null)
     {
 
-        $sql = 'select * from products';
+        $sql = 'select * from customers';
 
         if (!is_null($active)) {
             $sql .= ' where isActive = ' . $active . ';';
@@ -96,7 +100,7 @@ class Product
         // Not used yet but a required field so stuff it with something
         $data['role_id'] = 1;
 
-        $sql = 'INSERT into products ({{fields}}) VALUES ({{values}})';
+        $sql = 'INSERT into customers ({{fields}}) VALUES ({{values}})';
 
         // Remove any fields that aren't in the white list
         $cleanData = $this->clean($data);
@@ -131,7 +135,7 @@ class Product
     public function delete($id)
     {
 
-        $sql = 'update products set isActive=0 where id = ' . $id . ';';
+        $sql = 'update customers set isActive=0 where id = ' . $id . ';';
 
         $result = $this->db->query($sql);
 

@@ -22,7 +22,7 @@ echo $header->renderStatic();
 if ($requestType == 'GET') {
 
     // Show the Create Products Form
-    $form = new createProductTemplate();
+    $form = new postProductTemplate();
     echo $form->render();
 
 } else {
@@ -44,5 +44,3 @@ if ($requestType == 'GET') {
 // Load page header
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();
-
-
