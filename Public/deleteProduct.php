@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/../includes/application_includes.php'
 
 // Include the template files needed for the page
 require_once(FS_TEMPLATES . 'mainHeaderTemplate.php');
-require_once(FS_TEMPLATES . 'createProductTemplate.php');
+require_once(FS_TEMPLATES . 'deleteProductTemplete.php');
 require_once(FS_TEMPLATES . 'mainFooterTemplate.php');
 
 require_once (FS_INCLUDES . 'product.php');

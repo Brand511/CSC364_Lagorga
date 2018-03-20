@@ -19,7 +19,7 @@ class mainHeaderTemplate extends templateEngine
         <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,6 +33,8 @@ class mainHeaderTemplate extends templateEngine
 
     <!-- Custom styles for this template -->
     <link href="assets/css/shop-homepage.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/tableStyle.css" type="text/css" media="all"/>
 
 </head>
 
@@ -53,19 +55,13 @@ class mainHeaderTemplate extends templateEngine
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cart</a>
+                    <a class="nav-link" href="ProductTable.php">Products</a>
                 </li>
                 <li class="="nav-item">
                 <a class="nav-link" href="createProduct.php">Post Products</a>
                 </li>
-                <li class="="nav-item">
-                <a class="nav-link" href="createSupplier.php">Create Supplier</a>
-                </li>
-                <li class="="nav-item">
-                <a class="nav-link" href="createUser.php">Create customer</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
                 </li>
             </ul>
         </div>
@@ -81,9 +77,9 @@ class mainHeaderTemplate extends templateEngine
 
             <h1 class="my-4">FlyPoleVault Features</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Poles</a>
-                <a href="#" class="list-group-item">Jump Mats</a>
-                <a href="#" class="list-group-item">Training Material</a>
+                <a href="ProductTable.php" class="list-group-item">Poles</a>
+                <a href="ProductTable.php" class="list-group-item">Jump Mats</a>
+                <a href="ProductTable.php" class="list-group-item">Training Material</a>
             </div>
 
         </div>

@@ -2,7 +2,7 @@
 
 require_once (FS_TEMPLATES . 'templateEngine.php');
 
-class createProductTemplate extends templateEngine {
+class updateProductTemplate extends templateEngine {
 
 
     public function __construct(){
@@ -10,7 +10,7 @@ class createProductTemplate extends templateEngine {
         $temp = <<<HTML
             <div class="container" >
                 <div class="row justify-content-center">
-                    <h2>Post a new product</h2>
+                    <h2>Update this product</h2>
                 </div>
                 <div class="row justify-content-center">
                     <form class="col-md-8" action="/updateProduct.php" method="POST" >

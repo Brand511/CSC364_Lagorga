@@ -194,6 +194,4 @@ class Product
         return $values;
 
     }
-
-
 }

@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/../includes/application_includes.php'
 
 // Include the template files needed for the page
 require_once(FS_TEMPLATES . 'mainHeaderTemplate.php');
-require_once(FS_TEMPLATES . 'createProductTemplate.php');
+require_once(FS_TEMPLATES . 'updateProductTemplate.php');
 require_once(FS_TEMPLATES . 'mainFooterTemplate.php');
 
 require_once (FS_INCLUDES . 'product.php');
@@ -22,7 +22,7 @@ echo $header->renderStatic();
 if ($requestType == 'GET') {
 
     // Show the Create Products Form
-    $form = new postProductTemplate();
+    $form = new updateProductTemplate();
     echo $form->render();
 
 } else {

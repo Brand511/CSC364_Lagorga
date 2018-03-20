@@ -60,10 +60,9 @@ class createProductTemplate extends templateEngine {
                         </div>
                         
                         <div class="form-group row">                            
-                            <div class="col-md-4 offset-md-3">
-                                <input id="cost" name="Cost" type="text" placeholder="Cost" class="form-control here">
-                            </div>                           
-                        </div>
+                        <div class="col-md-9 offset-md-3">
+                                <input id="cost" name="cost" placeholder="Cost" type="text" class="form-control here" required="required">
+                            </div>
                         
                         <div class="form-group row">
                             <div class="offset-3 col-md-9">
