@@ -5,7 +5,7 @@ require_once (FS_TEMPLATES . 'templateEngine.php');
 class updateProductTemplate extends templateEngine {
 
 
-    public function __construct(){
+    public function __construct($products){
 
         $temp = <<<HTML
             <div class="container" >
@@ -74,6 +74,18 @@ class updateProductTemplate extends templateEngine {
                 </div>
             </div>
 HTML;
+
+        // Token substitution
+        $temp = str_replace('{{id}}', $products['id'], $temp);
+        $temp = str_replace('{{name}}', $products['name'], $temp);
+        $temp = str_replace('{{sku}}', $products['sku'], $temp);
+        $temp = str_replace('{{price}}', $products['price'], $temp);
+        $temp = str_replace('{{supplier_id}}', $products['supplier_id'], $temp);
+        $temp = str_replace('{{supplier_sku}}', $products['supplier_sku'], $temp);
+        $temp = str_replace('{{qty_available}}', $products['qty_available'], $temp);
+        $temp = str_replace('{{date_added}}', $products['date_added'], $temp);
+        $temp = str_replace('{{cost}}', $products['cost'], $temp);
+
         $this->template = $temp;
 
     }

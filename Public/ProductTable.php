@@ -17,29 +17,31 @@ require_once (FS_INCLUDES . 'product.php');
 $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
-
-if ($requestType == 'GET') {
-
-    // Show the Create Products Form
+    $p = new Product($db);
+    $products = $p->getProducts();
+?>
+    <table>
+        <thead>
+        <tr>
+            <th>Number</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>sku</th>
+            <th>update</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+    // Show the Create Products table Form
     $form = new productTableTemplate();
-    echo $form->render();
-
-} else {
-
-    // Process form data
-    $formData = $_POST;
-    //$formData['created_at'] = date('Y-m-d H:i:s', time());
-    // Create User object and save data to the database
-    $u = new Product($db);
-    $r = $u->getProducts($formData);
-
-    // When done, redirect to a web page
-    header('Location: http://csc364dev.com/index.php');
+    echo $form->data($products)->renderList();
 
 
-}
-
-
+?>
+        </tbody>
+    </table>
+<?php
 // Load page header
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();

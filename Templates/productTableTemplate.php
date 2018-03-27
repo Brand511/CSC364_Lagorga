@@ -11,28 +11,14 @@ class productTableTemplate extends templateEngine
 
         $temp = <<<HTML
         <!-- Container -->
-<table>
-  <thead>
     <tr>
-      <th>Number</th>
-      <th>Product</th>
-      <th>Price</th>
-      <th>sku</th>
-      <th>update</th>
-      <th>Delete</th>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{sku}}</td>
+      <td>{{price}}</td>
+      <td><a class="editButton" href="/updateProduct.php?id={{id}}">Update</a></td>
+      <td><a class="deleteButton" href="/deleteProduct.php?id={{id}}">Delete</a></td>   
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><$id</td>
-      <td>$name</td>
-      <td>$sku</td>
-      <td>$Price</td>
-      <td><a class="editButton" href="/updateProduct.php?">Update</a></td>
-      <td><a class="deleteButton" href="/deleteProduct.php?">Delete</a></td>   
-    </tr>
-  </tbody>
-</table>
 HTML;
         $this->template = $temp;
 

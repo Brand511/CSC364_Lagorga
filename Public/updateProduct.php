@@ -20,19 +20,27 @@ echo $header->renderStatic();
 
 
 if ($requestType == 'GET') {
+    $product_id = $_REQUEST['id'];
 
-    // Show the Create Products Form
-    $form = new updateProductTemplate();
+    $p = new Product($db);
+    $Products = $p->getProduct($product_id);
+
+    // Show the update Products Form
+    $form = new updateProductTemplate($products);
     echo $form->render();
 
 } else {
 
     // Process form data
     $formData = $_POST;
-    //$formData['created_at'] = date('Y-m-d H:i:s', time());
-    // Create User object and save data to the database
+    echo "<pre>";
+    print_r($formData);
+    echo "</pre>";
+    // die();
+
+    // Create product object and save data to the database
     $u = new Product($db);
-    $r = $u->create($formData);
+    $r = $u->update($formData);
 
     // When done, redirect to a web page
     header('Location: http://csc364dev.com/index.php');

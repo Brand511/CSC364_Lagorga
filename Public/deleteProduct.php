@@ -21,11 +21,10 @@ echo $header->renderStatic();
 
 if ($requestType == 'GET') {
 
+    $id=$_GET{'id'};
     // Show the Create Products Form
     $form = new deleteProductTemplate();
     echo $form->render();
-
-} else {
 
     // Process form data
     $formData = $_POST;
