@@ -18,15 +18,18 @@ require_once (FS_INCLUDES . 'product.php');
 $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
+
+if ($requestType == 'GET') {
+    // Get the product_id that was passed in
+    // 'http://csc206dev.com/updateProduct.php?id=1'
     $product_id = $_REQUEST['id'];
-
-    $p = new Product($db);
-    $Products = $p->getProduct($product_id);
-
-    // Show the update Products Form
-    $form = new updateProductTemplate();
-    echo $form->renderStatic();
-
+    $product = new Product($db);
+    $u = $product->getProduct($product_id);
+    //print_r($u); //die();
+    // Show the Update User Form
+    $form = new updateProductTemplate($u);
+    echo $form->render();
+} else {
     // Process form data
     $formData = $_POST;
     echo "<pre>";
@@ -34,11 +37,12 @@ echo $header->renderStatic();
     echo "</pre>";
     // die();
 
-    // Create product object and save data to the database
+    // Create User object and save data to the database
     $u = new Product($db);
     $r = $u->update($formData);
-
-
+    // When done, redirect to a web page
+    // header('Location: http://csc206dev.com/index.php');
+}
 // Load page header
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();

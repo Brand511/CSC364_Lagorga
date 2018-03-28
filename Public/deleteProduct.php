@@ -18,30 +18,21 @@ require_once (FS_INCLUDES . 'product.php');
 $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
-if ($requestType == 'GET') {
 
     // Show the Create Products Form
     $form = new deleteProductTemplate();
     echo $form->render();
 
-
-} else {
-
     // Process form data
-    $formData = $_POST;
+    $formData = $_GET;
     //$formData['created_at'] = date('Y-m-d H:i:s', time());
     // Create User object and save data to the database
     $u = new Product($db);
     echo "<pre>";
     print_r($u);
     echo "</pre>";
-    $r = $u->delete($formData);
+    $r = $u->delete($formData['id']);
 
-    // When done, redirect to a web page
-    header('Location: http://csc364dev.com/index.php');
-
-
-}
 
 
 // Load page header

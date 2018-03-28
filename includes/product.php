@@ -62,7 +62,7 @@ class Product
 
         $result = $this->db->query($sql);
 
-        return $result;
+        return $result->fetch();
 
     }
 
@@ -118,7 +118,7 @@ class Product
 
     public function update($data)
     {
-        $sql = "update products set name = '" . $data['name'] . "', sku = '" . $data['sku'] . "', price = '" . $data['price'] . "', supplier_id = '" . $data['supplier_id'] . "', supplier_sku = '" . $data['supplier_sku'] . "', cost = '" . $data['cost'] . "', qty_available = '" . $data['qty_available'] . "', date_added = '" . $data['date_added'] . "' where id = " . $data['id'] . ';';
+        $sql = "update products set name = '" . $data['name'] . "', sku = '" . $data['sku'] . "', price = '" . $data['price'] . "', supplier_id = '" . $data['supplier_id'] . "', supplier_sku = '" . $data['supplier_sku'] . "', picture = '" . $data['picture'] . "', cost = '" . $data['cost'] . "', qty_available = '" . $data['qty_available'] . "', date_added = '" . $data['date_added'] . "' where id = " . $data['id'] . ';';
         $result = $this->db->query($sql);
         return $result;
     }
@@ -133,7 +133,7 @@ class Product
     public function delete($id)
     {
 
-        $sql = 'update products set isActive=0 where id = ' . $id . ';';
+        $sql = 'update products set isActive = 0 where id = ' . $id . ';';
 
         $result = $this->db->query($sql);
 
