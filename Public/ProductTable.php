@@ -27,6 +27,7 @@ echo $header->renderStatic();
             <th>Product</th>
             <th>Price</th>
             <th>sku</th>
+            <th>image</th>
             <th>update</th>
             <th>Delete</th>
         </tr>

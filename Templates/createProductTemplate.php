@@ -58,6 +58,12 @@ class createProductTemplate extends templateEngine {
                                 <input id="date_added" name="date_added" type="text" placeholder="date_added" class="form-control here">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="image" class="col-md-3 col-form-label">Image</label>
+                            <div class="col-md-9">
+                                <input id="picture" name="picture" type="file" class="form-control here">
+                            </div>
+                        </div>
                         
                         <div class="form-group row">                            
                         <div class="col-md-9 offset-md-3">

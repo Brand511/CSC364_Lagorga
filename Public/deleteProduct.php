@@ -18,19 +18,23 @@ require_once (FS_INCLUDES . 'product.php');
 $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
-
 if ($requestType == 'GET') {
 
-    $id=$_GET{'id'};
     // Show the Create Products Form
     $form = new deleteProductTemplate();
     echo $form->render();
+
+
+} else {
 
     // Process form data
     $formData = $_POST;
     //$formData['created_at'] = date('Y-m-d H:i:s', time());
     // Create User object and save data to the database
     $u = new Product($db);
+    echo "<pre>";
+    print_r($u);
+    echo "</pre>";
     $r = $u->delete($formData);
 
     // When done, redirect to a web page
