@@ -18,7 +18,7 @@ $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
     $p = new Product($db);
-    $products = $p->getProducts(1);
+    $products = $p->getProducts(0);
 ?>
     <table>
         <thead>

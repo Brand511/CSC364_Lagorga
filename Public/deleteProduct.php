@@ -33,8 +33,6 @@ echo $header->renderStatic();
     echo "</pre>";
     $r = $u->delete($formData['id']);
 
-
-
 // Load page header
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();

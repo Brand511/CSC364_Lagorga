@@ -55,6 +55,12 @@ class createProductTemplate extends templateEngine {
                         <div class="form-group row">
                             
                             <div class="col-md-9 offset-md-3">
+                                <input id="isActive" name="isActive" type="text" placeholder="isActive" class="form-control here">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            
+                            <div class="col-md-9 offset-md-3">
                                 <input id="date_added" name="date_added" type="text" placeholder="date_added" class="form-control here">
                             </div>
                         </div>

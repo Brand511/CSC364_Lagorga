@@ -7,7 +7,7 @@ class updateProductTemplate extends templateEngine {
     protected $whiteList = ['id',
         'name', 'sku', 'price',
         'supplier_id', 'supplier_sku', 'cost', 'picture', 'qty_available',
-        'date_added'];
+        'date_added', 'isActive'];
 
     public function __construct($u){
 
@@ -41,19 +41,25 @@ class updateProductTemplate extends templateEngine {
                         <div class="form-group row">
                             <label for="address1" class="col-md-3 col-form-label">Supplier</label>
                             <div class="col-md-9">
-                                <input id="supplier_id" name="supplier_id" type="text" placeholder="supplier_id" value="{{supplier_id}}" class="form-control here">
+                                <input id="supplier_id" name="supplier_id" type="text" placeholder="supplier_id" value="{{supplier_ID}}" class="form-control here">
                             </div>
                         </div>
                         <div class="form-group row">
                             
                             <div class="col-md-9 offset-md-3">
-                                <input id="supplier_sku" name="supplier_sku" type="text" placeholder="supplier_sku" value="{{supplier_sku}}"class="form-control here">
+                                <input id="supplier_sku" name="supplier_sku" type="text" placeholder="supplier_SKU" value="{{supplier_SKU}}"class="form-control here">
                             </div>
                         </div>
                         <div class="form-group row">
                             
                             <div class="col-md-9 offset-md-3">
                                 <input id="qty_available" name="qty_available" type="text" placeholder="qty_available" value="{{qty_available}}"class="form-control here">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            
+                            <div class="col-md-9 offset-md-3">
+                                <input id="isActive" name="isActive" type="text" placeholder="isActive" value="{{isActive}}" class="form-control here">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -91,9 +97,10 @@ HTML;
         $temp = str_replace('{{picture}}', $u['picture'], $temp);
         $temp = str_replace('{{date_added}}', $u['date_added'], $temp);
         $temp = str_replace('{{qty_available}}', $u['qty_available'], $temp);
-        $temp = str_replace('{{supplier_id}}', $u['supplier_id'], $temp);
-        $temp = str_replace('{{supplier_sku}}', $u['supplier_sku'], $temp);
+        $temp = str_replace('{{supplier_ID}}', $u['supplier_ID'], $temp);
+        $temp = str_replace('{{supplier_SKU}}', $u['supplier_SKU'], $temp);
         $temp = str_replace('{{price}}', $u['price'], $temp);
+        $temp = str_replace('{{isActive}}', $u['isActive'], $temp);
         $this->template = $temp;
 
     }
