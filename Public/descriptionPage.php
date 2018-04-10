@@ -24,7 +24,7 @@ $products = $p->getProducts();
     </div>
 <?php
 $form = new descriptionPageTemplate();
-echo $form->data($products)->renderList();
+echo $form->data($products)->render();
 
 
 $footer = new mainFooterTemplate();

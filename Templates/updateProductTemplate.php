@@ -37,6 +37,10 @@ class updateProductTemplate extends templateEngine {
                                 <textarea class="form-control" id="description" name="description" value="{{description}}"> </textarea>
                             </div>
                         </div>
+                        <label class="col-md-3 col-form-label" for="description">Id</label>
+                        <div class="col-md-3 w-80">                                
+                                <input id="id" name="id" placeholder="id" type="text" class="form-control here" value="{{id}}" required="required">                                    
+                            </div>
                                                 
                         <div class="form-group row">
                             <label for="address1" class="col-md-3 col-form-label">Supplier</label>
@@ -57,9 +61,8 @@ class updateProductTemplate extends templateEngine {
                             </div>
                         </div>
                         <div class="form-group row">
-                            
                             <div class="col-md-9 offset-md-3">
-                                <input id="isActive" name="isActive" type="text" placeholder="isActive" value="{{isActive}}" class="form-control here">
+                                <input id="isActive" name="isActive" type="text" placeholder="0=active, 1=inactive" value="{{isActive}}" class="form-control here">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -101,6 +104,7 @@ HTML;
         $temp = str_replace('{{supplier_SKU}}', $u['supplier_SKU'], $temp);
         $temp = str_replace('{{price}}', $u['price'], $temp);
         $temp = str_replace('{{isActive}}', $u['isActive'], $temp);
+        $temp = str_replace('{{id}}', $u['id'], $temp);
         $this->template = $temp;
 
     }

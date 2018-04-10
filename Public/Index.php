@@ -15,18 +15,6 @@ echo $header->renderStatic();
 $p = new Product($db);
 $products = $p->getProducts();
 ?>
-
-        <div class="row">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-
-            </div>
-        </div>
-        <!-- /.row -->
-<?php
-    $form = new productShowTemplate();
-    echo $form->data($products)->renderList();
-?>
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
@@ -35,6 +23,8 @@ $products = $p->getProducts();
                 <p>This is a PoleVault Community that orders poles, training programs, and Pole Vault pits to allow better access for many high school, college, and olympic facilities
                     to host events, meets, practices, etc. to create a community in the United States.
                 </p >
+                <h2>Products</h2>
+                <p>We have our products listed down below.</p>
             </div >
             <div class="col-md-4" >
                 <h2 > List of known Facilities </h2 >
@@ -51,6 +41,17 @@ $products = $p->getProducts();
         </div >
     </div > <!-- /container-->
 
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+
+        </div>
+    </div>
+    <!-- /.row -->
+<?php
+$form = new productShowTemplate();
+echo $form->data($products)->renderList();
+?>
 <?php
 $footer = new mainFooterTemplate();
 echo $footer->renderStatic();

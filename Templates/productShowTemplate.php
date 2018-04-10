@@ -16,7 +16,7 @@ class productShowTemplate extends templateEngine
                         <h4 class="card-title">
                             <a href="descriptionPage.php">{{name}}</a>
                         </h4>
-                        <h5>"$"{{price}}</h5>
+                        <h5>$ {{price}}</h5>
                         <p class="card-text">{{description}}</p>
                         <div class="card h-100">
                     <div class="card-footer">
