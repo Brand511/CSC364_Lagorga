@@ -37,10 +37,6 @@ class updateProductTemplate extends templateEngine {
                                 <textarea class="form-control" id="description" name="description" value="{{description}}"> </textarea>
                             </div>
                         </div>
-                        <label class="col-md-3 col-form-label" for="description">Id</label>
-                        <div class="col-md-3 w-80">                                
-                                <input id="id" name="id" placeholder="id" type="text" class="form-control here" value="{{id}}" required="required">                                    
-                            </div>
                                                 
                         <div class="form-group row">
                             <label for="address1" class="col-md-3 col-form-label">Supplier</label>
@@ -61,11 +57,6 @@ class updateProductTemplate extends templateEngine {
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-9 offset-md-3">
-                                <input id="isActive" name="isActive" type="text" placeholder="0=active, 1=inactive" value="{{isActive}}" class="form-control here">
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             
                             <div class="col-md-9 offset-md-3">
                                 <input id="date_added" name="date_added" type="text" placeholder="0000/00/00" value="{{date_added}}" class="form-control here">
@@ -78,11 +69,24 @@ class updateProductTemplate extends templateEngine {
                                 <input id="picture" name="picture" type="file" value="/assets/image/{{picture}}" class="form-control here">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="id">Id</label>
+                            <div class="col-md-3 w-80">                                
+                                <input id="id" name="id" placeholder="id" type="text" class="form-control here" value="{{id}}" required="required">                                    
+                            </div>
+                         </div>
                         
                         <div class="form-group row">                            
                             <div class="col-md-4 offset-md-3">
                                 <input id="cost" name="cost" type="text" placeholder="Cost" value="{{cost}}" class="form-control here">
                             </div>                           
+                        </div>
+                        
+                        <div class="form-group row">
+                        <label class="col-md-3 col-form-label" for="description">Delete from view</label>
+                            <div class="col-md-9 offset-md-3">
+                                <input id="isActive" name="isActive" type="checkbox" value="{{isActive}}" class="form-control here">
+                            </div>
                         </div>
                         
                         <div class="form-group row">

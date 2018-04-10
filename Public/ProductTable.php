@@ -18,10 +18,10 @@ $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
     $p = new Product($db);
-    $products = $p->getProducts(0);
+    $products = $p->getProducts(1);
 ?>
     <table>
-        <thead>
+        <thead> Not Active
         <tr>
             <th>Number</th>
             <th>Product</th>
@@ -40,6 +40,32 @@ echo $header->renderStatic();
 
 
 ?>
+        </tbody>
+    </table>
+<?php
+$p = new Product($db);
+$products = $p->getProducts(0);
+?>
+    <table>
+        <thead> Active
+        <tr>
+            <th>Number</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>sku</th>
+            <th>image</th>
+            <th>update</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        // Show the Create Products table Form
+        $form = new productTableTemplate();
+        echo $form->data($products)->renderList();
+
+
+        ?>
         </tbody>
     </table>
 <?php

@@ -32,16 +32,16 @@ if ($requestType == 'GET') {
 } else {
     // Process form data
     $formData = $_POST;
-    echo "<pre>";
-    print_r($formData);
-    echo "</pre>";
+    //echo "<pre>";
+    //print_r($formData);
+    //echo "</pre>";
     // die();
 
     // Create User object and save data to the database
     $u = new Product($db);
     $r = $u->update($formData);
     // When done, redirect to a web page
-    // header('Location: http://csc206dev.com/index.php');
+    header('Location: http://csc364dev.com/index.php');
 }
 // Load page header
 $footer = new mainFooterTemplate();
