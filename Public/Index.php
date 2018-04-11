@@ -13,7 +13,7 @@ $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
 $p = new Product($db);
-$products = $p->getProducts();
+$products = $p->getProducts(0);
 ?>
     <div class="container">
         <!-- Example row of columns -->
