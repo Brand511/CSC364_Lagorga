@@ -95,9 +95,11 @@ class Database
         return $this->db->real_escape_String($string);
     }
 }
+
 /**
  * MySQLResult Data Fetching Class
  *
+ * @property  num_rows
  * @access public
  * @package SPLIB
  */

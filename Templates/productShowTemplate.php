@@ -18,9 +18,8 @@ class productShowTemplate extends templateEngine
                         </h4>
                         <h5>$ {{price}}</h5>
                         <p class="card-text">{{description}}</p>
-                       <div class="col-md-6">
-                            <a class="btn btn-success" href="cartAction.php?action=addToCart&id=<?php echo $row["id"]; ?>">Add to cart</a>
-                        </div>
+                                <button name="submit" type="submit" href="actionCart.php?id={{id}}" class="btn btn-primary">Place in Cart</button>
+                        <div class="card h-100">
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
