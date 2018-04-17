@@ -19,8 +19,6 @@ class mainHeaderTemplate extends templateEngine
         <!DOCTYPE html>
 <html lang="en">
 
-<>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -35,6 +33,18 @@ class mainHeaderTemplate extends templateEngine
     <link href="assets/css/shop-homepage.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/tableStyle.css" type="text/css" media="all"/>
+    
+    <script>
+    function updateCartItem(obj,id) {
+        $.get("cartAction.php", {action:"updateCartItem", id:id, qty:obj.value}, function(data){
+            if(data == 'ok'){
+                location.reload();
+            }else{
+                alert('Cart update failed, please try again.');
+            }
+        });
+      }
+</script>
 
 </head>
 
@@ -61,7 +71,7 @@ class mainHeaderTemplate extends templateEngine
                 <a class="nav-link" href="createProduct.php">Post Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="cart.php">Cart</a>
+                    <a class="nav-link" href="viewCart.php">Cart</a>
                 </li>
             </ul>
         </div>

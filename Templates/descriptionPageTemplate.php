@@ -24,7 +24,7 @@ class descriptionPageTemplate extends templateEngine
                     </div>
                 <div class="form-group row">
                             <div class="offset-3 col-md-9">
-                                <button name="submit" type="submit" class="btn btn-primary">Place in Cart</button>
+                                <button name="submit" type="submit" value="AddToCart" class="btn btn-primary">Place in Cart</button>
                             </div>
                         </div>
 HTML;

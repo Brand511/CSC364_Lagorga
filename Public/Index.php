@@ -1,4 +1,5 @@
 <?php
+
 // Load all application files and configurations
 require($_SERVER[ 'DOCUMENT_ROOT' ] . '/../includes/application_includes.php');
 // Include the HTML layout class
@@ -7,7 +8,6 @@ require_once(FS_TEMPLATES . 'productShowTemplate.php');
 require_once(FS_TEMPLATES . 'mainFooterTemplate.php');
 
 require_once (FS_INCLUDES . 'product.php');
-
 
 $header = new mainHeaderTemplate();
 echo $header->renderStatic();
@@ -30,10 +30,10 @@ $products = $p->getProducts(0);
                 <h2 > List of known Facilities </h2 >
                 <p > That became Founders of this Community:
                 <ol >
-                    <li ><a href = "#" > Westmister College</a ></li >
-                    <li ><a href = "#" > Norwin School District</a ></li >
-                    <li ><a href = "#" > Geneva College</a ></li >
-                    <li ><a href = "#" > Hempfield School District </a ></li >
+                    <li ><a href = "https://www.westminster.edu/index.cfm" > Westmister College</a ></li >
+                    <li ><a href = "https://www.norwinsd.org/highschool" > Norwin School District</a ></li >
+                    <li ><a href = "http://www.geneva.edu/" > Geneva College</a ></li >
+                    <li ><a href = "https://www.hasdpa.net/" > Hempfield School District </a ></li >
                 </ol >
                 </p >
             </div >
