@@ -177,4 +177,5 @@ class MySQLResult
     {
         return $this->db->isError();
     }
+
 }

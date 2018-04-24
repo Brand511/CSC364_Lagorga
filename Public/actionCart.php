@@ -9,7 +9,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         $productID = $_REQUEST['id'];
         // get product details
         $query = $db->query("SELECT * FROM products WHERE id = ".$productID);
-        $row = $query->fetch_assoc();
+        $row = $query->fetch();
         $itemData = array(
             'id' => $row['id'],
             'name' => $row['name'],
