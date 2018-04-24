@@ -36,7 +36,7 @@ class mainHeaderTemplate extends templateEngine
     
     <script>
     function updateCartItem(obj,id) {
-        $.get("cartAction.php", {action:"updateCartItem", id:id, qty:obj.value}, function(data){
+        $.get("actionCart.php", {action:"updateCartItem", id:id, qty:obj.value}, function(data){
             if(data == 'ok'){
                 location.reload();
             }else{

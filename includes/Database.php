@@ -99,7 +99,6 @@ class Database
 /**
  * MySQLResult Data Fetching Class
  *
- * @property  num_rows
  * @access public
  * @package SPLIB
  */

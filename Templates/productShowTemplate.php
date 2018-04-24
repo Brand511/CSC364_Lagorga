@@ -18,7 +18,7 @@ class productShowTemplate extends templateEngine
                         </h4>
                         <h5>$ {{price}}</h5>
                         <p class="card-text">{{description}}</p>
-                                <button name="submit" type="submit" href="actionCart.php?id={{id}}" class="btn btn-primary">Place in Cart</button>
+                                <button name="submit" type="submit" href="actionCart.php?action=addToCart&id={{id}}" class="btn btn-primary">Add to Cart</button>
                         <div class="card h-100">
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
